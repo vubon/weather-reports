@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Report of Bangladesh Major City</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <style>
+        body{padding-top:70px;}
+        .dhaka{padding:20px;border:1px solid #ddd;}
+        hr{margin-bottom:13rem;}
+        h3{font-size:18px;color:#4E9231;}
+        p{font-size:16px;}
+        em{color:red}
+    </style>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="row">
+                {% for weather in weathers %}
+                <div class="col-md-4">
+                    <div class="dhaka">
+                        <h3>Today's {{weather.name}} Weather Report</h3>
+
+                        <p>
+                            Temperature is <em><u>{{ weather.main.temp }}°C</u></em><br/>
+                            Pressure is <em><u>{{ weather.main.pressure }}hpa</u></em> <br/>
+                            Humidity is <em>{{ weather.main.humidity }} %</em><br/>
+                            Min temperature is <em>{{ weather.main.temp_min }}</em> °C<br/>
+                            Min temperature is <em>{{ weather.main.temp_max }}</em> °C
+                        </p>
+                    </div>
+                </div>
+                 <hr>
+                {% endfor %}
+            </div>
+
+        </div>
+    </section>
+</body>
+</html>
